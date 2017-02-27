@@ -1,16 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-from spinner_runner import SpinnerRunner
+from spinner_runner import SpinnerRunner, SPINNER_STYLES
 import sys, time
 
-spinnerRunner = SpinnerRunner(sys.argv[1], True)
-
-if len(sys.argv) > 2:
-	spinnerRunner.setLoadingString(sys.argv[2])
-
-spinnerRunner.start()
-time.sleep(15)
-print "\nDone"
-spinnerRunner.cancel()
-exit(0)
+for key, value in SPINNER_STYLES.iteritems():
+	spinnerRunner = SpinnerRunner(key, True)
+	spinnerRunner.start()
+	time.sleep(3)
+	spinnerRunner.cancel()

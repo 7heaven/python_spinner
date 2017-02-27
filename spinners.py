@@ -72,3 +72,8 @@ class ArrowSpinner1(Spinner):
 
 	def __init__(self):
 		Spinner.__init__(self, ['▹▹▹▹▹', '▸▹▹▹▹', '▹▸▹▹▹', '▹▹▸▹▹', '▹▹▹▸▹', '▹▹▹▹▸'])
+
+class SquareCornerSpinner(Spinner):
+
+	def __init__(self):
+		Spinner.__init__(self, ['◰', '◳', '◲', '◱'])

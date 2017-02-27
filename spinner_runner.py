@@ -1,10 +1,9 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 from __future__ import print_function
 import time, sys, threading
 from spinners import *
 
-SPINNER_STYLES = {'dot0' : DotSpinner0(), 'dot1' : DotSpinner1(), 'dot2' : DotSpinner2(), 'star' : StarSpinner(), 'moon' : MoonSpinner(), 'clock' : ClockSpinner(), 'arrow0' : ArrowSpinner0(), 'arrow1' : ArrowSpinner1()}
+SPINNER_STYLES = {'dot0' : DotSpinner0(), 'dot1' : DotSpinner1(), 'dot2' : DotSpinner2(), 'star' : StarSpinner(), 'moon' : MoonSpinner(), 'clock' : ClockSpinner(), 'arrow0' : ArrowSpinner0(), 'arrow1' : ArrowSpinner1(), 'squarecorner' : SquareCornerSpinner()}
 
 COLOR_START = 31
 COLOR_END 	= 27
