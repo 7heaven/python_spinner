@@ -21,7 +21,7 @@ class SpinnerRunner:
 	spinner = None
 
 	shouldSwitchColors = False
-	cancel = False
+	cancelled = False
 	
 	def __init__(self, spinnerStyle, shouldSwitchColors = False):
 		if not spinnerStyle is None and spinnerStyle in SPINNER_STYLES:
@@ -64,8 +64,8 @@ class SpinnerRunner:
 		time.sleep(0.4)
 
 	def start(self):
-		while not self.cancel:
+		while not self.cancelled:
 			self.singleRun()
 
 	def cancel(self):
-		self.cancel = True
+		self.cancelled = True
