@@ -11,6 +11,6 @@ if len(sys.argv) > 2:
 
 spinnerRunner.start()
 time.sleep(15)
-print "Done"
+print "\nDone"
 spinnerRunner.cancel()
 exit(0)
