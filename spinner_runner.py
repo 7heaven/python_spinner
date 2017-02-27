@@ -5,7 +5,7 @@ from __future__ import print_function
 import time, sys
 from spinners import *
 
-SPINNER_STYLES = {'dot0' : DotSpinner0(), 'dot1' : DotSpinner1(), 'dot2' : DotSpinner2(), 'star' : StarSpinner(), 'moon' : MoonSpinner(), 'clock' : ClockSpinner()}
+SPINNER_STYLES = {'dot0' : DotSpinner0(), 'dot1' : DotSpinner1(), 'dot2' : DotSpinner2(), 'star' : StarSpinner(), 'moon' : MoonSpinner(), 'clock' : ClockSpinner(), 'arrow0' : ArrowSpinner0(), 'arrow1' : ArrowSpinner1()}
 
 COLOR_START = 31
 COLOR_END 	= 27
@@ -21,6 +21,7 @@ class SpinnerRunner:
 	spinner = None
 
 	shouldSwitchColors = False
+	cancel = False
 	
 	def __init__(self, spinnerStyle, shouldSwitchColors = False):
 		if not spinnerStyle is None and spinnerStyle in SPINNER_STYLES:
@@ -63,5 +64,8 @@ class SpinnerRunner:
 		time.sleep(0.4)
 
 	def start(self):
-		while True:
+		while not self.cancel:
 			self.singleRun()
+
+	def cancel(self):
+		self.cancel = True

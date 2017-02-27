@@ -3,6 +3,6 @@
 
 from spinner_runner import SpinnerRunner
 
-spinnerRunner = SpinnerRunner('star', True)
+spinnerRunner = SpinnerRunner('moon', True)
 spinnerRunner.setLoadingString('Fucking')
 spinnerRunner.start()
