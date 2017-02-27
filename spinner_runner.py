@@ -25,6 +25,8 @@ class SpinnerRunner:
 	def __init__(self, spinnerStyle, shouldSwitchColors = False):
 		if not spinnerStyle is None and spinnerStyle in SPINNER_STYLES:
 			self.spinner = SPINNER_STYLES[spinnerStyle]
+		else:
+			raise ValueError('spinnerStyle Error')
 
 		self.shouldSwitchColors = shouldSwitchColors
 
