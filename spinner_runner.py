@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
+# -*- coding: utf-8 -*- 
 from __future__ import print_function
-import time, sys
+import time, sys, threading
 from spinners import *
 
 SPINNER_STYLES = {'dot0' : DotSpinner0(), 'dot1' : DotSpinner1(), 'dot2' : DotSpinner2(), 'star' : StarSpinner(), 'moon' : MoonSpinner(), 'clock' : ClockSpinner(), 'arrow0' : ArrowSpinner0(), 'arrow1' : ArrowSpinner1()}
@@ -64,6 +63,12 @@ class SpinnerRunner:
 		time.sleep(0.4)
 
 	def start(self):
+		try:
+			threading.Thread(target=self.run).start()
+		except Exception as e:
+			print(str(e))
+
+	def run(self):
 		while not self.cancelled:
 			self.singleRun()
 
